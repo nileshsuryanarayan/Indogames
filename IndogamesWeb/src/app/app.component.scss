@@ -1,0 +1,36 @@
+@import "../styles.scss";
+
+.router-outlet {
+  // min-height: 750px;
+  height: fit-content;
+  // background-color: $app-blue;
+  display: inline-block;
+  margin: 25px 0px;
+  position: absolute;
+  left: 225px;
+  top: 60px;
+  right: 225px;
+  border-left: 1px solid #c4c4c4;
+  border-right: 1px solid #c4c4c4;
+  align-content: center;
+}
+#about-us {
+  color: $app-black;
+  height: fit-content;
+  margin: 25px 15px;
+  position: relative;
+  left: 0px;
+  top: 0px;
+  right: 225px;
+  align-content: center;
+}
+#contact-us {
+  color: $app-black;
+  height: fit-content;
+  margin: 25px 15px;
+  position: relative;
+  left: 0px;
+  top: 0px;
+  right: 225px;
+  align-content: center;
+}

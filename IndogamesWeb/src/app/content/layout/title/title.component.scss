@@ -1,0 +1,33 @@
+@import "../../../../styles.scss";
+
+.toolbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    background-color: $app-blue;
+    color: white;
+    font-weight: 600;
+    padding: 0px 15px;
+
+    #env {
+        text-align: center;
+        font-size: 24px;
+        font-weight: normal;
+    }
+  }
+
+.hover-shadow {
+    text-align: center;
+}
+.hover-shadow:hover {
+    text-shadow: 2px 2px 2px $app-dark-blue;
+    transform: scale(1.2);
+}
+#user {
+    font-size: 25px;
+    cursor: pointer;
+}

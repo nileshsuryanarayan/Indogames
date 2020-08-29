@@ -1,0 +1,13 @@
+@import "../../../../styles.scss";
+
+.right-panel {
+  height: 100px;
+  width: 200px;
+  background-color: $app-blue;
+  display: inline-block;
+  margin: 25px 0px;
+  position: absolute;
+  right: 0;
+  top: 60px;
+  border-left: 1px solid #c4c4c4;
+}

@@ -1,0 +1,76 @@
+/* Color variables */
+$app-blue: #1976d2;
+$app-light-blue: #5aa5f0;
+$app-dark-blue: #13589e;
+$app-white: #ffffff;
+$app-black: #000000bb;
+$grey-shadow: #c0c0c0;
+
+/* Global styles */
+* {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-size: 14px;
+    color: $app-white;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin: 0;
+    box-sizing: border-box;
+
+    a {
+        text-decoration: none;
+    }
+}
+h1 {
+    font-size: 32px;
+}
+h2 {
+    font-size: 28px;
+}
+h3 {
+    font-size: 24px;
+}
+h4 {
+    font-size: 20px;
+}
+h5 {
+    font-size: 18px;
+}
+h6 {
+    font-size: 14px;
+}
+.width-70 {
+    width: 70%; // 1/2 of Parent
+    display: inline-block;
+}
+.width-50 {
+    width: 50%; // 1/2 of Parent
+    display: inline-block;
+}
+.width-33 {
+    width: 33%; // 1/3rd of Parent
+    display: inline-block;
+}
+.width-30 {
+    width: 30%; // 1/2 of Parent
+    display: inline-block;
+}
+.width-25 {
+    width: 25%; // 1/4th of Parent
+    display: inline-block;
+}
+.sbs-div {
+    display: inline-block; // to display divs side-by-side
+}
+.button {
+    background-color: $app-blue;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid $app-blue;
+}
+.button:hover {
+    background-color: $app-dark-blue;
+    border: 1px solid $app-dark-blue;
+    cursor: pointer;
+    transform: scale(1.1);
+}

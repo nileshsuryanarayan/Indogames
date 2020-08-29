@@ -1,0 +1,39 @@
+@import "../../../../styles.scss";
+
+.sidenav {
+  height: fit-content;
+  width: 200px;
+  background-color: $app-white;
+  display: inline-block;
+  margin: 25px 0px;
+  position: absolute;
+  top: 60px;
+
+  ul {
+    list-style: none;
+  }
+}
+
+.left-panel-item {
+  text-align: left;
+  border-bottom: 1px solid #c4c4c4;
+  margin: 10px 0px 10px 50px;
+  background-color: $app-blue;
+  cursor: pointer;
+
+  a {
+    padding: 10px 0px;
+    font-size: 14px;
+    color: $app-white;
+    font-weight: bold;
+    display: block;
+  }
+}
+.left-panel-item:hover {
+  box-shadow: 2px 2px 2px $grey-shadow;
+  // text-shadow: 2px 2px 2px $grey-shadow;
+  transform: scale(1.1);
+}
+i {
+  color: $app-blue;
+}
