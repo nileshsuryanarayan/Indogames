@@ -3,15 +3,27 @@ import { User } from '../models/User.model';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { catchError, retry } from 'rxjs/operators';
 import { throwError } from 'rxjs';
+import { Login } from '../models/login.model';
+import { appConstants } from '../app.constants';
 
 @Injectable()
 export class UserService {
+    userUrl: string = appConstants.backendBaseUrl + 'users';
+    loginUrl: string = appConstants.backendBaseUrl + 'login';
 
     constructor(private http:HttpClient) {}
+
     getUsers() {
-        return this.http.get<User[]>('http://localhost:8080/users')
+        return this.http.get<User[]>(this.userUrl)
         .pipe(
             retry(2),
+            catchError(this.httpErrorHandler)
+        );
+    }
+
+    postLogin(login: Login) {
+        return this.http.post<User>(this.loginUrl, login)
+        .pipe(
             catchError(this.httpErrorHandler)
         );
     }

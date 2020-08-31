@@ -6,7 +6,7 @@ export const environment = {
   production: false,
   env: 'System',
   footerText: 'All © Copyrights preserved 2020',
-  image_directory: ''
+  image_directory: './assets/images-dev/'
 };
 
 /*

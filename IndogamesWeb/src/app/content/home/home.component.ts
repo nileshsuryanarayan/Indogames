@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { environment } from 'src/environments/environment';
 
 @Component({
     selector: 'app-home',
@@ -11,8 +12,8 @@ export class HomeComponent implements OnInit {
     dotsImage: string;
 
     ngOnInit() {
-        this.deskImage = '../../../assets/images-dev/desk.jpg';
-        this.rrcpImage = '../../../assets/images-dev/rrcp.jpg';
-        this.dotsImage = '../../../assets/images-dev/dots.jpg';
+        this.deskImage = environment.image_directory + 'desk.jpg';
+        this.rrcpImage = environment.image_directory + 'rrcp.jpg';
+        this.dotsImage = environment.image_directory + 'dots.jpg';
     }
 }
