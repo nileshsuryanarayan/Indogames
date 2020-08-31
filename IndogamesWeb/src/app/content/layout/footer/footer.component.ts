@@ -1,5 +1,5 @@
-import { Component, OnInit } from "@angular/core";
-import { DatePipe } from '@angular/common';
+import { Component, OnInit } from '@angular/core';
+import { environment } from 'src/environments/environment';
 
 @Component({
     selector: 'app-footer',
@@ -12,6 +12,6 @@ export class FooterComponent implements OnInit {
 
     ngOnInit() {
         this.timestamp = new Date();
-        this.copyright = 'All © Copyrights preserved 2020';
+        this.copyright = environment.footerText;
     }
 }

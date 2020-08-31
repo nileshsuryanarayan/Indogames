@@ -1,0 +1,36 @@
+@import "../../../styles.scss";
+
+#outer-container {
+}
+.row-div {
+  text-align: center;
+
+  #desktop-image {
+    width: 95%;
+    height: auto;
+  }
+}
+.width-50 {
+  width: 45%;
+  background-color: white;
+  box-shadow: 2px 2px 5px $grey-shadow;
+  border-radius: 0px;
+  margin: 2%;
+
+    .game-display {
+        width: 100%;
+
+        .game {
+            width: 100%;
+            height: auto;
+            // border: 1px solid $app-black;
+            box-shadow: 1px 1px 1px $grey-shadow;
+        }
+    }
+
+  .game-desc {
+    color: $app-black;
+    padding: 10px;
+    text-align: justify;
+  }  
+}

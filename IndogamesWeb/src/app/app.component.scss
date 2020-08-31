@@ -1,5 +1,14 @@
 @import "../styles.scss";
 
+#disclaimer {
+  // width: 100%;
+  position: absolute;
+  top: 60px;
+  left: 0;
+  right: 0;
+  color: $app-black;
+  font-weight: bold;
+}
 .router-outlet {
   // min-height: 750px;
   height: fit-content;
@@ -33,4 +42,9 @@
   top: 0px;
   right: 225px;
   align-content: center;
+}
+#pre-footer {
+  width: 100%;
+  height: 20px;
+  background-color: $app-light-blue;
 }

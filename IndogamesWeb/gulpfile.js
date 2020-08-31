@@ -1,9 +1,9 @@
 var gulp = require("gulp");
-var scss = require("gulp-scss");
+var sass = require("gulp-sass");
 
-gulp.task("scss", function() {
+gulp.task("build", function() {
   return gulp
     .src("*/*.scss")
-    .pipe(scss({ bundleExec: true }))
-    .pipe(gulp.dest("dist/css"));
+    .pipe(sass({ bundleExec: true }).on('error', sass.logError))
+    .pipe(gulp.dest("./dist/IndogamesWeb/"));
 });

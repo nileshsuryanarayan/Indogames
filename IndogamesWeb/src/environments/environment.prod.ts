@@ -1,4 +1,6 @@
 export const environment = {
   production: true,
-  env: ""
+  env: "",
+  footerText: "",
+  image_directory: ""
 };

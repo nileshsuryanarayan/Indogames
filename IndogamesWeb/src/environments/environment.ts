@@ -4,7 +4,9 @@
 
 export const environment = {
   production: false,
-  env: "System"
+  env: 'System',
+  footerText: 'All © Copyrights preserved 2020',
+  image_directory: ''
 };
 
 /*

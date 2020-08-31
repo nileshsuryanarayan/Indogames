@@ -1,6 +1,6 @@
-import { NgModule } from "@angular/core";
-import { TitleComponent } from "./title/title.component";
-import { FooterComponent } from "./footer/footer.component";
+import { NgModule } from '@angular/core';
+import { TitleComponent } from './title/title.component';
+import { FooterComponent } from './footer/footer.component';
 import { LeftPanelComponent } from './left-panel/leftpanel.component';
 import { RightPanelComponent } from './right-panel/rightpanel.component';
 import { BrowserModule } from '@angular/platform-browser';
