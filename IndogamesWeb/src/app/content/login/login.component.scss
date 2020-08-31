@@ -5,16 +5,23 @@
   // min-height: 600px;
   height: fit-content;
   background-color: white;
-  box-shadow: 5px 5px 10px #a0a0a0;
+  box-shadow: 5px 5px 10px $grey-shadow;
   border-radius: 5px;
   margin-left: auto;
   margin-right: auto;
   margin-top: 10px;
   margin-bottom: 10px;
 
+  .width-70 {
+    height: inherit;
+    overflow: hidden;
+    // max-height: ;
+  }
+
   .width-30 {
     height: inherit;
     position: relative;
+    top: 0;
     right: 0;
     margin-top: auto;
     margin-bottom: auto;
@@ -50,4 +57,18 @@
       }
     }
   }
+}
+.user-display {
+  background-color: $app-white;
+  box-shadow: 2px 2px 5px $grey-shadow;
+  border-radius: 0px;
+  width: 90%;
+  padding: 8px;
+  font-size: 18px;
+  color: $app-black;
+  margin: 5px auto 5px auto;
+  cursor: pointer;
+}
+.user-display:hover {
+  transform: scale(1.1);
 }
