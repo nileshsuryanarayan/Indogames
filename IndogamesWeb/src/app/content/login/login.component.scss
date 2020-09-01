@@ -1,5 +1,8 @@
 @import "../../../styles.scss";
 
+* {
+  color: $app-black;
+}
 .outer-container {
   width: 90%;
   // min-height: 600px;

@@ -1,7 +1,8 @@
-import { Component, OnInit, Input } from "@angular/core";
+import { Component, OnInit, Input, ElementRef, ViewChild } from "@angular/core";
 import { UserService } from "src/app/service/user.service";
 import { User } from "src/app/models/User.model";
 import { Login } from "src/app/models/login.model";
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: "app-login",
@@ -15,13 +16,20 @@ export class LoginComponent implements OnInit {
   @Input() password: string;
   @Input() user: User;
   login: Login;
+  isLoading: boolean = true;
+  @ViewChild('err') err: ElementRef;
 
-  constructor(private service: UserService) {}
+  constructor(private service: UserService) { }
 
   ngOnInit() {
     this.service.getUsers().subscribe((data: User[]) => {
-      (this.users = data), error => (this.error = error);
-      console.log(this.users);
+      this.isLoading = false;
+      (
+        this.users = data
+      ),
+        (error: HttpErrorResponse) => (
+          this.error = error
+        );
     });
   }
 

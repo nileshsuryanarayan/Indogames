@@ -6,16 +6,28 @@ import { RightPanelComponent } from './right-panel/rightpanel.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { LoadingComponent } from './loading/loading.component';
 
 @NgModule({
-  declarations: [TitleComponent, FooterComponent, LeftPanelComponent, RightPanelComponent],
+  declarations: [
+    TitleComponent,
+    FooterComponent,
+    LeftPanelComponent,
+    RightPanelComponent,
+    LoadingComponent
+  ],
   schemas: [],
   imports: [
     CommonModule,
-    BrowserModule,
     RouterModule
   ],
-  exports: [TitleComponent, FooterComponent, LeftPanelComponent, RightPanelComponent],
+  exports: [
+    TitleComponent,
+    FooterComponent,
+    LeftPanelComponent,
+    RightPanelComponent,
+    LoadingComponent
+  ],
   providers: []
 })
-export class LayoutModule {}
+export class LayoutModule { }
