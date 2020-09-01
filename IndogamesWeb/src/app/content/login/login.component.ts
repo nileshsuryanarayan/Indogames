@@ -30,7 +30,7 @@ export class LoginComponent implements OnInit {
    * @param $event MouseClick event
    */
   onClickLogin($event) {
-    console.log($event);
+    const target = $event.target;
     console.log(this.username + " " + this.password);
     this.login = {
       username: this.username,

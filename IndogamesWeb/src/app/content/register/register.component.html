@@ -1,3 +1,17 @@
-<div style="color: black;">
-    Register works!
+<div class="outer-container">
+    <form [formGroup]="registerationForm" (submit)="onClickRegister(registerationForm)" id="registerForm">
+        <h2>REGISTRATION</h2>
+        <br>
+        <input type="text" formControlName="firstname" name="fname" id="fname" class="textbox"
+            placeholder="Enter firstname" size="20" />
+        <input type="text" formControlName="lastname" name="lname" id="lname" class="textbox"
+            placeholder="Enter lastname" size="20" />
+        <input type="email" formControlName="email" name="email" id="email" class="textbox" placeholder="Enter email"
+            maxlength="50" />
+        <input type="password" formControlName="password" name="pass" id="pass" class="textbox"
+            placeholder="Enter password" minlength="8" />
+        <input type="password" name="confPass" id="confPass" class="textbox" placeholder="Confirm password"
+            minlength="8" />
+        <button type="submit" class="button">Register</button>
+    </form>
 </div>
