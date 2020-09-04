@@ -7,6 +7,9 @@ $app-white: #ffffff;
 $app-black: #000000bb;
 $grey-shadow: #c0c0c0;
 
+$error-text: rgba(255, 30, 30);
+$warning-text: rgb(250, 200, 30);
+
 /* Global styles */
 * {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
@@ -86,4 +89,9 @@ h6 {
   border-radius: 5px;
   border: 1px solid $grey-shadow;
   color: $app-black;
+}
+.errtxt {
+  color: $error-text;
+  font-size: 12px;
+  font-weight: bold;
 }

@@ -1,5 +1,7 @@
 <div class="outer-container">
     <div class="width-70">
+        <b *ngIf="isLoading" id="status">{{status}}</b>
+        <b *ngIf="!isLoading && error!=null" id="status">{{status}}</b>
         <div *ngIf="isLoading">
             <loading-anim></loading-anim>
         </div>
@@ -8,7 +10,6 @@
                 <p (click)="fillLogin(user)">{{user.firstname|uppercase}}&nbsp;{{user.lastname|uppercase}}</p>
             </div>
         </div>
-        <b id="err">{{error}}</b>
     </div>
     <div class="width-30">
         <h2>LOGIN</h2>

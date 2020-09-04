@@ -10,27 +10,30 @@ import { HttpErrorResponse } from '@angular/common/http';
   styleUrls: ["./login.component.scss"]
 })
 export class LoginComponent implements OnInit {
-  users: User[];
-  error: any;
+  users: User[] = null;
+  error: HttpErrorResponse = null;
   @Input() username: string;
   @Input() password: string;
   @Input() user: User;
   login: Login;
   isLoading: boolean = true;
-  @ViewChild('err') err: ElementRef;
+  status: string;
 
   constructor(private service: UserService) { }
 
   ngOnInit() {
-    this.service.getUsers().subscribe((data: User[]) => {
-      this.isLoading = false;
-      (
-        this.users = data
-      ),
-        (error: HttpErrorResponse) => (
-          this.error = error
-        );
-    });
+    this.status = 'Fetching users...';
+    this.service.getUsers().subscribe(
+      (data: User[]) => {
+        this.users = data,
+          this.isLoading = false
+      },
+      (err: HttpErrorResponse) => {
+        this.error = err,
+          this.isLoading = false,
+          this.status = 'Oops! Backend server didn\'t respond';
+      }
+    )
   }
 
   /**

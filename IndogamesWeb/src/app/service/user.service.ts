@@ -11,30 +11,26 @@ export class UserService {
     userUrl: string = appConstants.backendBaseUrl + 'users';
     loginUrl: string = appConstants.backendBaseUrl + 'login';
 
-    constructor(private http:HttpClient) {}
+    constructor(private http: HttpClient) { }
 
     getUsers() {
         return this.http.get<User[]>(this.userUrl)
-        .pipe(
-            retry(2),
-            catchError(this.httpErrorHandler)
-        );
+            .pipe(
+                retry(2),
+                catchError(error => {
+                    console.log('Error in userservice', error);
+                    return throwError(error);
+                })
+            );
     }
 
     postLogin(login: Login) {
         return this.http.post<User>(this.loginUrl, login)
-        .pipe(
-            catchError(this.httpErrorHandler)
-        );
-    }
-
-    httpErrorHandler(error: HttpErrorResponse) {
-        if (error.error instanceof ErrorEvent) {
-            console.log('Error: ' + error.message);
-        } else {
-            console.log('Error code: ' + error.status);
-            console.log('Error message: ' + error.statusText + ' ' + error.message + ' ' + error.url);
-        }
-        return throwError('Backend server didn\'t respont');
+            .pipe(
+                catchError(error => {
+                    console.log('Error in service', error);
+                    return throwError(error);
+                })
+            );
     }
 }

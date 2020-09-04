@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { Component, OnInit, SimpleChanges, OnChanges, Input } from '@angular/core';
+import { FormGroup, FormControl, AbstractControl, FormBuilder, Validators } from '@angular/forms';
+import { MustMatch } from 'src/app/validators/forms.validator';
 
 @Component({
     selector: 'new-register',
@@ -8,24 +9,36 @@ import { FormGroup, FormControl } from '@angular/forms';
 })
 export class RegisterComponent implements OnInit {
 
-    firstname: FormControl;
-    lastname: FormControl;
-    email: FormControl;
-    password: FormControl;
-    registerationForm: FormGroup = new FormGroup({
-        firstname: new FormControl(),
-        lastname: new FormControl(),
-        email: new FormControl(),
-        password: new FormControl()
-    });
+    registerationForm: FormGroup;
+
+    constructor(private formBuilder: FormBuilder) { }
 
     ngOnInit() {
-
+        this.registerationForm = this.formBuilder.group({
+            firstname: ['', [Validators.required, Validators.maxLength(20)]],
+            lastname: ['', [Validators.required, Validators.maxLength(20)]],
+            mobileNum: ['', [Validators.required, Validators.minLength(10), Validators.maxLength(10)], Validators.pattern('^[0-9]*$')],
+            email: ['', [Validators.required, Validators.email, Validators.maxLength(50)]],
+            password: ['', [Validators.required, Validators.minLength(8)]],
+            confirmPassword: ['', Validators.required]
+        }, {
+            Validator: MustMatch('password', 'confirmPassword')
+        });
     }
 
-    onClickRegister(registerForm: FormGroup) {
-        console.log(registerForm.get('firstname').value);
-        console.log(registerForm.get('lastname').value);
+    onSubmit() {
+        if (this.registerationForm.invalid) {
+            console.log(this.registerationForm);
+            return;
+        }
+    }
+
+    confirmPassValidation(pass: FormControl, confPass: FormControl): boolean {
+        if (pass.value === confPass.value) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
 }
