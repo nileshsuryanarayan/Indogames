@@ -1,5 +1,4 @@
-import { Component } from "@angular/core";
-import { environment } from 'src/environments/environment';
+import { Component } from '@angular/core';
 
 @Component({
     selector: 'loading-anim',
@@ -7,5 +6,5 @@ import { environment } from 'src/environments/environment';
     styleUrls: ['./loading.component.scss']
 })
 export class LoadingComponent {
-    loaderGif: string = '';
+    loaderGif = './assets/loading/spin.gif';
 }

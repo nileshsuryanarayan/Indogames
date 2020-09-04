@@ -1,13 +1,13 @@
-import { Component, OnInit, Input, ElementRef, ViewChild } from "@angular/core";
-import { UserService } from "src/app/service/user.service";
-import { User } from "src/app/models/User.model";
-import { Login } from "src/app/models/login.model";
+import { Component, OnInit, Input, ElementRef, ViewChild } from '@angular/core';
+import { UserService } from 'src/app/service/user.service';
+import { User } from 'src/app/models/User.model';
+import { Login } from 'src/app/models/login.model';
 import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
-  selector: "app-login",
-  templateUrl: "./login.component.html",
-  styleUrls: ["./login.component.scss"]
+  selector: 'app-login',
+  templateUrl: './login.component.html',
+  styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
   users: User[] = null;
@@ -16,7 +16,7 @@ export class LoginComponent implements OnInit {
   @Input() password: string;
   @Input() user: User;
   login: Login;
-  isLoading: boolean = true;
+  isLoading = true;
   status: string;
 
   constructor(private service: UserService) { }
@@ -26,23 +26,22 @@ export class LoginComponent implements OnInit {
     this.service.getUsers().subscribe(
       (data: User[]) => {
         this.users = data,
-          this.isLoading = false
+          this.isLoading = false;
       },
       (err: HttpErrorResponse) => {
         this.error = err,
           this.isLoading = false,
           this.status = 'Oops! Backend server didn\'t respond';
       }
-    )
+    );
   }
 
   /**
-   * 
    * @param $event MouseClick event
    */
   onClickLogin($event) {
     const target = $event.target;
-    console.log(this.username + " " + this.password);
+    console.log(this.username + ' ' + this.password);
     this.login = {
       username: this.username,
       password: this.password
@@ -53,7 +52,7 @@ export class LoginComponent implements OnInit {
   }
 
   /**
-   * 
+   *
    * @param user user object which is selected for login
    */
   fillLogin(user: User) {

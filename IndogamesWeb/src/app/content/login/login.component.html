@@ -1,7 +1,7 @@
 <div class="outer-container">
     <div class="width-70">
-        <b *ngIf="isLoading" id="status">{{status}}</b>
-        <b *ngIf="!isLoading && error!=null" id="status">{{status}}</b>
+        <b *ngIf="isLoading" class="status">{{status}}</b>
+        <b *ngIf="!isLoading && error!=null" class="status">{{status}}</b>
         <div *ngIf="isLoading">
             <loading-anim></loading-anim>
         </div>
