@@ -8,6 +8,8 @@ import { environment } from 'src/environments/environment';
 })
 export class TitleComponent {
   title = 'INDOGAMES';
-  userIcon = '../../../../assets/profile/u.png';
+  userIcon = './assets/profile/u.png';
+  ilogo = './assets/logo/i.png';
+  glogo = './assets/logo/g.png';
   environment = environment.env;
 }
