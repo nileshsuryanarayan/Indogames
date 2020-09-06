@@ -8,6 +8,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RegisterComponent } from './register/register.component';
 import { LayoutModule } from './layout/layout.module';
+import { UserModule } from './user/user.module';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { LayoutModule } from './layout/layout.module';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    LayoutModule
+    LayoutModule,
+    UserModule
   ],
   exports: [ContentRouterModule],
   providers: [UserService]

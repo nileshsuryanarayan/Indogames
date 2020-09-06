@@ -46,9 +46,12 @@ export class LoginComponent implements OnInit {
       username: this.username,
       password: this.password
     };
-    this.service.postLogin(this.login).subscribe((data: User) => {
-      console.log(data);
-    });
+    this.service.postLogin(this.login).subscribe(
+      (data: User) => {
+        console.log(data);
+      }, error => {
+        console.log(error);
+      });
   }
 
   /**
