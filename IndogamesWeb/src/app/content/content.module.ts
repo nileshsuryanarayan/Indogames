@@ -9,6 +9,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RegisterComponent } from './register/register.component';
 import { LayoutModule } from './layout/layout.module';
 import { UserModule } from './user/user.module';
+import { UserAuthGuard } from '../service/userauth.guard';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,9 @@ import { UserModule } from './user/user.module';
     UserModule
   ],
   exports: [ContentRouterModule],
-  providers: [UserService]
+  providers: [
+    UserService,
+    UserAuthGuard
+  ]
 })
 export class ContentModule { }

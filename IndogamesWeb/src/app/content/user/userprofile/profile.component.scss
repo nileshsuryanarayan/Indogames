@@ -1,0 +1,16 @@
+@import '../../../../styles.scss';
+
+* {
+    color: $app-black;
+}
+.width-20 {
+
+    #profile-pic {
+        width: 200px;
+        height: auto;
+        box-shadow: 5px 5px 5px $grey-shadow;
+    }
+}
+.width-80 {
+    border-left: 2px solid $grey-shadow;
+}

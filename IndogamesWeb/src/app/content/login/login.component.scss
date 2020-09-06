@@ -52,7 +52,7 @@
       font-size: 18px;
     }
 
-    p {
+    p:not(.errtxt) {
       color: $app-black;
       margin-bottom: 20px;
 

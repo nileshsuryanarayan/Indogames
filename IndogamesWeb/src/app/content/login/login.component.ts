@@ -3,6 +3,8 @@ import { UserService } from 'src/app/service/user.service';
 import { User } from 'src/app/models/User.model';
 import { Login } from 'src/app/models/login.model';
 import { HttpErrorResponse } from '@angular/common/http';
+import { Router } from '@angular/router';
+import { UserAuthGuard } from 'src/app/service/userauth.guard';
 
 @Component({
   selector: 'app-login',
@@ -18,8 +20,16 @@ export class LoginComponent implements OnInit {
   login: Login;
   isLoading = true;
   status: string;
+  userFromService: User;
+  loginFormSubmitted = false;
+  noUserText = '*User not found';
 
-  constructor(private service: UserService) { }
+  constructor(
+    private service: UserService,
+    private router: Router,
+    private userauthguard: UserAuthGuard,
+    // private stateService: StateService
+  ) { }
 
   ngOnInit() {
     this.status = 'Fetching users...';
@@ -40,18 +50,27 @@ export class LoginComponent implements OnInit {
    * @param $event MouseClick event
    */
   onClickLogin($event) {
-    const target = $event.target;
-    console.log(this.username + ' ' + this.password);
     this.login = {
       username: this.username,
       password: this.password
     };
-    this.service.postLogin(this.login).subscribe(
+    this.userFromService = this.service.postLogin(this.login);
+    if (!!this.userFromService) {
+      this.userauthguard.setLoginTrue(true);
+      this.router.navigate(['home'], {state: {user: this.userFromService}});
+    } else {
+      this.loginFormSubmitted = true;
+      this.router.navigate(['login']);
+    }
+    /* this.service.postLogin(this.login).subscribe(
       (data: User) => {
         console.log(data);
+        this.userauthguard.setLoginTrue(true);
+        this.router.navigate(['home']);
       }, error => {
         console.log(error);
-      });
+        this.router.navigate(['home']);
+      }); */
   }
 
   /**
