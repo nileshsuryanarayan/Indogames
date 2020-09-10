@@ -1,7 +1,7 @@
 @import "../../../styles.scss";
 
 * {
-  color: $app-blue;
+  
 }
 
 .outer-container {
@@ -16,6 +16,7 @@
 
     h2 {
       text-align: center;
+      color: $app-blue;
     }
 
     .textbox {
@@ -30,5 +31,10 @@
       margin: 20px auto 20px auto;
       width: 50%;
     }
+
+    p {
+      color: $error-text;
+    }
+
   }
 }

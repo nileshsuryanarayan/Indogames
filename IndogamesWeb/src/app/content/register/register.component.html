@@ -2,6 +2,8 @@
     <form [formGroup]="registerationForm" (ngSubmit)="onSubmit()" id="registerForm">
         <h2>REGISTRATION</h2>
         <br>
+        <p *ngIf="!!registrationErr" class="errtxt">{{registrationErr}}</p>
+        <br>
         <input type="text" formControlName="firstname" name="fname" id="fname" class="textbox"
             placeholder="Enter firstname" size="30" />
         <label
