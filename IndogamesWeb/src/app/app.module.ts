@@ -5,10 +5,12 @@ import { AppComponent } from './app.component';
 import { LayoutModule } from './content/layout/layout.module';
 import { AppRoutingModule } from './app.routing.module';
 import { CommonModule } from '@angular/common';
+import { SentenceCasePipe } from './content/pipes/sentence-case.pipe';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    SentenceCasePipe
   ],
   imports: [
     CommonModule,
@@ -17,6 +19,7 @@ import { CommonModule } from '@angular/common';
     AppRoutingModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  exports: [SentenceCasePipe]
 })
 export class AppModule { }

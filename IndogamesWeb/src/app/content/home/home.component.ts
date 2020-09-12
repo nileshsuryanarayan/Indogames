@@ -10,10 +10,13 @@ export class HomeComponent implements OnInit {
     deskImage: string;
     rrcpImage: string;
     dotsImage: string;
+    randomLine: string;
 
     ngOnInit() {
         this.deskImage = environment.image_directory + 'desk.jpg';
         this.rrcpImage = environment.image_directory + 'rrcp.jpg';
         this.dotsImage = environment.image_directory + 'dots.jpg';
+
+        this.randomLine = 'my name is vadapav';
     }
 }

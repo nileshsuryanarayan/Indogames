@@ -11,6 +11,7 @@ import { LayoutModule } from './layout/layout.module';
 import { UserModule } from './user/user.module';
 import { UserAuthGuard } from '../service/userauth.guard';
 import { ValidatorService } from '../service/validator.service';
+import { SentenceCasePipe } from './pipes/sentence-case.pipe';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,7 @@ import { ValidatorService } from '../service/validator.service';
     LayoutModule,
     UserModule
   ],
-  exports: [ContentRouterModule],
+  exports: [],
   providers: [
     UserService,
     UserAuthGuard,
