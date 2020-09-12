@@ -6,10 +6,11 @@ export const MOCK_ADMIN_USER: User = {
     firstname: 'Lionel',
     lastname: 'Messi',
     email: 'lionel.messi@mu.ac.in',
+    mobileNum: 9987654321,
     password: 'Lionel@96'
-}
+};
 
 export const MOCK_ADMIN_LOGIN_CREDS: Login = {
     username: 'admin',
     password: 'admin'
-}
+};

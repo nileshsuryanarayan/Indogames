@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit } from '@angular/core';
 import { User } from 'src/app/models/User.model';
 import { UserAuthGuard } from 'src/app/service/userauth.guard';
 
@@ -17,6 +17,5 @@ export class UserProfileComponent implements OnInit {
         this.user = history.state.user;
         console.log('In profile component...');
         console.log(this.user);
-        this.user.id
     }
 }

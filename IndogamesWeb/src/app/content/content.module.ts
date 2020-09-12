@@ -10,6 +10,7 @@ import { RegisterComponent } from './register/register.component';
 import { LayoutModule } from './layout/layout.module';
 import { UserModule } from './user/user.module';
 import { UserAuthGuard } from '../service/userauth.guard';
+import { ValidatorService } from '../service/validator.service';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { UserAuthGuard } from '../service/userauth.guard';
   exports: [ContentRouterModule],
   providers: [
     UserService,
-    UserAuthGuard
+    UserAuthGuard,
+    ValidatorService
   ]
 })
 export class ContentModule { }

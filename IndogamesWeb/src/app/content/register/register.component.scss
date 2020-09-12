@@ -24,6 +24,10 @@
       margin: 10px auto 5px auto;
     }
 
+    .ng-invalid.ng-touched {
+      border: 1px solid $error-text;
+    }
+
     .button {
       color: $app-white;
       font-size: 18px;

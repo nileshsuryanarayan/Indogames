@@ -1,4 +1,4 @@
-import { Injectable } from "@angular/core";
+import { Injectable } from '@angular/core';
 import { CanActivate, Router } from '@angular/router';
 import { User } from '../models/User.model';
 import { MOCK_ADMIN_USER } from '../mockdata/mock.data';
