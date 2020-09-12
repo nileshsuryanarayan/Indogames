@@ -8,19 +8,19 @@
             placeholder="Enter firstname" size="30" />
         <input type="text" formControlName="lastname" name="lname" id="lname" class="textbox"
             placeholder="Enter lastname" size="30" />
-        <!-- <label *ngIf="lastname.hasError" class="errtxt">This field is required</label> -->
         <input type="tel" formControlName="mobileNum" name="mobile" id="mobile" class="textbox"
             placeholder="Mobile, eg. 9999999999" size="30" />
-        <!-- <label *ngIf="mobileNum.hasError" class="errtxt">This field is required</label> -->
         <input type="email" formControlName="email" name="email" id="email" class="textbox"
             placeholder="Email, eg. paul@gmail.com" maxlength="50" size="30" />
-        <!-- <label *ngIf="email.hasError" class="errtxt">This field is required</label> -->
-        <input type="text" formControlName="password" name="pass" id="pass" class="textbox"
+        <input type="password" formControlName="password" name="pass" id="pass" class="textbox"
             placeholder="Password, atleast 8 characters" minlength="8" size="30" />
-        <!-- <label *ngIf="password.hasError" class="errtxt">This field is required</label> -->
-        <input type="text" formControlName="confirmPassword" name="confPass" id="confPass" class="textbox"
+        <input type="password" formControlName="confirmPassword" name="confPass" id="confPass" class="textbox"
             placeholder="Confirm password" minlength="8" size="30" />
-        <!-- <label *ngIf="confirmPassword.hasError" class="errtxt">Password don't match</label> -->
-        <button type="submit" class="button">Register</button>
+        <label *ngIf="registerationForm.get('confirmPassword').valid && !submitted" class="greentxt">Password matched!</label>
+        <label *ngIf="submitted && !submitLoading" class="errtxt">{{backendError}}</label>
+        <div *ngIf="submitLoading" id="onSubmitLoader">
+            <loading-anim></loading-anim>
+        </div>
+        <button type="submit" formControlName="submit" class="button">Register</button>
     </form>
 </div>

@@ -5,7 +5,7 @@ import { catchError, retry } from 'rxjs/operators';
 import { throwError } from 'rxjs';
 import { Login } from '../models/login.model';
 import { appConstants, errorConstants } from '../app.constants';
-import { MOCK_ADMINuser, MOCK_ADMIN_LOGIN_CREDS } from '../mockdata/mock.data';
+import { MOCK_ADMIN_USER, MOCK_ADMIN_LOGIN_CREDS } from '../mockdata/mock.data';
 import { FormGroup } from '@angular/forms';
 
 @Injectable()
@@ -42,23 +42,31 @@ export class UserService {
         login.username === MOCK_ADMIN_LOGIN_CREDS.username &&
         login.password === MOCK_ADMIN_LOGIN_CREDS.password
       ) {
-        return MOCK_ADMINuser;
+        return MOCK_ADMIN_USER;
       }
     } else {
       return null;
     }
   }
 
-  /* postRegister(user: FormGroup) {
-    return this.http.post<User>(this.registerUrl, user).pipe(
+  postRegister(userForm: FormGroup) {
+    this.user = {
+      firstname: userForm.get('firstname').value,
+      lastname: userForm.get('lastname').value,
+      mobileNum: userForm.get('mobileNum').value,
+      email: userForm.get('email').value,
+      password: userForm.get('password').value
+    };
+    console.log('User service', this.user);
+    return this.http.post<User>(this.registerUrl, this.user).pipe(
       catchError(error => {
         console.log('Error in registration service', error);
         return throwError(error);
       })
     );
-  } */
+  }
 
-  postRegister(user): string {
+  /* postRegister(user): string {
     console.log(user.value);
     let fname: string;
     let lname: string;
@@ -66,32 +74,11 @@ export class UserService {
     let mobile: number;
     let password: string;
 
-    if (!!user.value.firstname) {
-      fname = user.value.firstname;
-      if (!!user.value.lastname) {
-        lname = user.value.lastname;
-        if (!!user.value.mobileNum) {
-          mobile = user.value.mobileNum;
-          if (!!user.value.email) {
-            email = user.value.email;
-            if (!!user.value.password) {
-              password = user.value.password;
-              console.log(user.value.password);
-              return null;
-            } else {
-              return errorConstants.REQUIRED_PASSWORD;
-            }
-          } else {
-            return errorConstants.REQUIRED_EMAIL;
-          }
-        } else {
-          return errorConstants.REQUIRED_MOBILE;
-        }
-      } else {
-        return errorConstants.REQUIRED_LASTNAME;
-      }
-    } else {
-      return errorConstants.REQUIRED_FIRSTNAME;
-    }
-  }
+    fname = user.value.firstname;
+    lname = user.value.lastname;
+    mobile = user.value.mobileNum;
+    email = user.value.email;
+    password = user.value.password;
+    return null;
+  } */
 }

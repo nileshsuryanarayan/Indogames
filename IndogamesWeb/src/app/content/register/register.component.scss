@@ -28,6 +28,10 @@
       border: 1px solid $error-text;
     }
 
+    #confPass.ng-touched.ng-dirty.ng-valid {
+      border: 1px solid $green-text;
+    }
+
     .button {
       color: $app-white;
       font-size: 18px;
@@ -38,6 +42,11 @@
 
     p {
       color: $error-text;
+    }
+
+    #onSubmitLoader {
+      width: 100%;
+      height: auto;
     }
 
   }

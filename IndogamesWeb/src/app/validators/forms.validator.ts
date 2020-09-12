@@ -1,27 +1,13 @@
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormGroup } from '@angular/forms';
 
-export function FormGroupValidation(formGroup: FormGroup) {
-  return formGroup;
-}
-
-export function GeneralFormControl(formControl: FormControl) {
-  if (formControl.status === 'INVALID') {
-    if (formControl.touched || formControl.dirty) {
-      formControl.setErrors({ required: true });
+export function matchPassword(form: FormGroup) {
+  const password: string = form.get('password').value;
+  const confirmpass: string = form.get('confirmPassword').value;
+  if (password.length > 0) {
+    if (confirmpass.length > 0) {
+      if (confirmpass !== password) {
+      } else {
+      }
     }
   }
-  return formControl;
-}
-
-export function MustMatch(password: string, confirmPassword: string) {
-  return (formGroup: FormGroup) => {
-    const pass = formGroup.controls[password];
-    const matchPass = formGroup.controls[confirmPassword];
-
-    if (pass.value === matchPass.value) {
-      matchPass.setErrors(null);
-    } else {
-      matchPass.setErrors({ MustMatch: true });
-    }
-  };
 }

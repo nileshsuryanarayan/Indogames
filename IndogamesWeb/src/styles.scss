@@ -9,6 +9,7 @@ $grey-shadow: #c0c0c0;
 
 $error-text: rgb(255, 30, 30);
 $warning-text: rgb(250, 200, 30);
+$green-text: rgb(5, 165, 75);
 
 /* Global styles */
 * {
@@ -96,6 +97,11 @@ h6 {
 }
 .errtxt {
   color: $error-text;
+  font-size: 12px;
+  font-weight: bold;
+}
+.greentxt {
+  color: $green-text;
   font-size: 12px;
   font-weight: bold;
 }

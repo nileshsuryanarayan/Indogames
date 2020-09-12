@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { FormError } from '../models/form.error.model';
 import { FormGroup, FormControl, AbstractControl } from '@angular/forms';
-import { appConstants } from '../app.constants';
+import { appConstants, errorConstants } from '../app.constants';
 
 @Injectable()
 export class ValidatorService {
@@ -28,35 +28,29 @@ export class ValidatorService {
   private generateErrTxt(control: AbstractControl): string {
     let errorText = '';
     for (const err in control.errors) {
-      console.log(control.errors[err].requiredPattern);
-      if (err.match('required')) {
-        errorText = errorText + ' is Mandatory';
-      } else if (err.match('minlength')) {
-        errorText =
-          errorText +
-          ' must be atleast ' +
-          control.errors[err].requiredLength +
-          ' characters';
-      } else if (err.match('maxlength')) {
-        errorText =
-          errorText +
-          ' must be maximum ' +
-          control.errors[err].requiredLength +
-          ' characters';
-      } else if (err.match('pattern')) {
-        this.pattern = control.errors[err].requiredPattern;
-        switch (this.pattern) {
-          case appConstants.number_regex: {
-            errorText = '- only numeric characters allowed';
-            break;
-          }
-          case appConstants.email_regex: {
-            errorText = '- invalid email';
-            break;
-          }
+      if (control.errors.hasOwnProperty(err)) {
+        console.log(control.errors[err].requiredPattern);
+        if (err.match('required')) {
+          errorText = errorConstants._REQUIRED;
+        } else if (err.match('minlength')) {
+            errorText = control.errors[err].requiredLength + errorConstants._MINIMUM_LENGTH;
+        } else if (err.match('maxlength')) {
+            errorText = control.errors[err].requiredLength + errorConstants._MAXIMUM_LENGTH;
+        } else if (err.match('pattern')) {
+            this.pattern = control.errors[err].requiredPattern;
+            switch (this.pattern) {
+              case appConstants.number_regex: {
+                errorText = errorConstants._ONLY_NUMBERS;
+                break;
+              }
+              case appConstants.email_regex: {
+                errorText = errorConstants._INVALID_EMAIL;
+                break;
+              }
+            }
         }
+        return errorText;
       }
-      return errorText;
     }
   }
 }
