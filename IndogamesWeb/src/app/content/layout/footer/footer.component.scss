@@ -18,3 +18,26 @@
     text-align: right;
   }
 }
+
+/* Media queries begin here */
+@media only screen and (max-width: 600px) {
+  * {
+    font-size: 12px;
+  }
+  #mid-footer {
+    width: 0;
+    display: none;
+  }
+  #copyright {
+    width: 50%;
+  }
+  #timestamp {
+    width: 50%;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+}
+
+@media only screen and (min-width: 992px) {
+}

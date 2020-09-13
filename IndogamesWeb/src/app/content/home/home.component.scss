@@ -34,3 +34,21 @@
     text-align: justify;
   }  
 }
+
+/* Media queries begin here */
+@media only screen and (max-width: 600px) {
+  #desktop-image {
+    width: 570px;
+    height: auto;
+  }
+  .width-50 {
+    width: 100%;
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+}
+
+@media only screen and (min-width: 992px) {
+}

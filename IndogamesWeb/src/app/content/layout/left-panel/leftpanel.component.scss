@@ -37,3 +37,17 @@
 i {
   color: $app-blue;
 }
+
+/* Media queries begin here */
+@media only screen and (max-width: 600px) {
+  .sidenav {
+    width: 0;
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+}
+
+@media only screen and (min-width: 992px) {
+}

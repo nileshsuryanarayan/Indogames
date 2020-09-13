@@ -1,33 +1,57 @@
 @import "../../../../styles.scss";
 
 .toolbar {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 60px;
-    display: flex;
-    align-items: center;
-    background-color: $app-blue;
-    color: white;
-    font-weight: 600;
-    padding: 0px 15px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  background-color: $app-blue;
+  color: white;
+  font-weight: 600;
+  padding: 0px 15px;
 
-    #env {
-        text-align: center;
-        font-size: 24px;
-        font-weight: normal;
-    }
+  #env {
+    text-align: center;
+    font-size: 24px;
+    font-weight: normal;
   }
+}
 
 .hover-shadow {
-    text-align: center;
+  text-align: center;
 }
 .hover-shadow:hover {
-    text-shadow: 2px 2px 2px $app-dark-blue;
-    transform: scale(1.2);
+  text-shadow: 2px 2px 2px $app-dark-blue;
+  transform: scale(1.2);
 }
 #user {
-    font-size: 25px;
-    cursor: pointer;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+/* Media queries begin here */
+@media only screen and (max-width: 600px) {
+  #env {
+    display: none;
+  }
+  .toolbar {
+    padding: 0;
+  }
+  #close-burger {
+    display: none;
+  }
+  #logo-div {
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+}
+
+@media only screen and (min-width: 992px) {
 }

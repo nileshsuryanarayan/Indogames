@@ -48,3 +48,18 @@
   height: 20px;
   background-color: $app-light-blue;
 }
+
+/* Media queries begin here */
+@media only screen and (max-width: 600px) {
+  .router-outlet {
+    width: -webkit-fill-available;
+    left: 0;
+    right: 0;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+}
+
+@media only screen and (min-width: 992px) {
+}
